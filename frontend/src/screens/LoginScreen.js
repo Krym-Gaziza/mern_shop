@@ -35,7 +35,7 @@ const LoginScreen = () => {
     <FormContainer>
       <h1 className="text-center mb-4">Sign In</h1>
 
-      {/* Card Styling and Spacing */}
+      {}
       <Card className="shadow-lg rounded-4 p-4">
         <Card.Body>
           {error && <Message variant='danger'>{error}</Message>}
@@ -43,7 +43,7 @@ const LoginScreen = () => {
           
           {/* Login Form */}
           <Form onSubmit={submitHandler}>
-            {/* Email Field */}
+            {}
             <Form.Group controlId='email' className="mb-4">
               <Form.Label className="fs-5 text-secondary">Email Address</Form.Label>
               <Form.Control
@@ -55,7 +55,7 @@ const LoginScreen = () => {
               />
             </Form.Group>
 
-            {/* Password Field */}
+            {}
             <Form.Group controlId='password' className="mb-4">
               <Form.Label className="fs-5 text-secondary">Password</Form.Label>
               <Form.Control
@@ -67,13 +67,13 @@ const LoginScreen = () => {
               />
             </Form.Group>
 
-            {/* Sign In Button */}
+            {}
             <Button
               className="w-100 py-3 my-3 rounded-3"
               type='submit'
               variant='primary'
               style={{
-                backgroundColor: '#5c6bc0', // Soft blue color
+                backgroundColor: '#5c6bc0', 
                 border: 'none',
                 boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
               }}

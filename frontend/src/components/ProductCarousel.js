@@ -1,41 +1,34 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Carousel, Image } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import Loader from './Loader'
-import Message from './Message'
-import { listTopProduct } from '../actions/productActions'
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
+import image1 from '../images/i1.png';
+import image2 from '../images/i2.png';
+import image3 from '../images/i3.png';
 
 const ProductCarousal = () => {
-  const dispatch = useDispatch()
+  const images = [
+    { id: 1, src: image1 },
+    { id: 2, src: image2 },
+    { id: 3, src: image3 },
+  ];
 
-  const productTopRated = useSelector((state) => state.productTopRated)
-  const { loading, error, products } = productTopRated
-
-  useEffect(() => {
-    dispatch(listTopProduct())
-  }, [dispatch])
-
-  return loading ? (
-    <Loader />
-  ) : error ? (
-    <Message variant='danger'>{error}</Message>
-  ) : (
-    <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
-            <Carousel.Caption>
-              <h2>
-                {product.name} ({product.price}tg)
-              </h2>
-            </Carousel.Caption>
-          </Link>
+  return (
+    <Carousel pause="hover" className="bg-dark">
+      {images.map((image) => (
+        <Carousel.Item key={image.id}>
+          <div
+            style={{
+              backgroundImage: `url(${image.src})`,
+              backgroundSize: 'cover',   
+              backgroundPosition: 'center', 
+              backgroundRepeat: 'no-repeat',
+              height: '300px',           
+              width: '100%',             
+            }}
+          ></div>
         </Carousel.Item>
       ))}
     </Carousel>
-  )
-}
+  );
+};
 
-export default ProductCarousal
+export default ProductCarousal;

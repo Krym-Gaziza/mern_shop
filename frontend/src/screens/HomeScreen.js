@@ -28,20 +28,22 @@ const HomeScreen = () => {
   return (
     <>
       <Meta />
-      {/* Carousel for home screen */}
+      {}
       {!keyword && <ProductCarousel />}
 
-      {/* Go Back button if there's a keyword in the URL */}
+      {}
       {keyword && (
         <Link to='/' className='btn btn-light mb-4'>
           <i className="fas fa-arrow-left"></i> Go Back
         </Link>
       )}
 
-      {/* Main heading */}
+      {}
       <h1 className="text-center my-4 text-primary">Latest Products</h1>
 
-      {/* Loading, Error, and Products Display */}
+      {
+
+      }
       {loading ? (
         <Loader />
       ) : error ? (
@@ -62,7 +64,7 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
-          {/* Pagination Component */}
+          {}
           <Paginate
             pages={pages}
             page={page}

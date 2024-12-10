@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header>
-      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+      <Navbar className="bg-dark-red" variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <Navbar.Brand as={Link} to='/'>
             Narxoz shop
