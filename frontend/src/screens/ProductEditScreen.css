@@ -1,0 +1,61 @@
+/* src/screens/ProductEditScreen.css */
+
+/* Форма контейнері */
+.form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Ашық фон */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Форма элементтері */
+  .form-container .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Форма лейблдары */
+  .form-container .form-label {
+    color: #333; /* Қара түс */
+    font-weight: 500;
+  }
+  
+  /* Форма инпуттары */
+  .form-container .form-control {
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Кнопкалар */
+  .form-container .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+  
+  /* Loader мен Error хабарламалары */
+  .form-container .loader, .form-container .error-message {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .form-container .btn-light {
+    margin-bottom: 20px;
+  }
+  
+  /* Go Back кнопкасы */
+  .go-back-btn {
+    background-color: #6c757d;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+  }
+  
+  .go-back-btn:hover {
+    background-color: #5a6268;
+  }
+  

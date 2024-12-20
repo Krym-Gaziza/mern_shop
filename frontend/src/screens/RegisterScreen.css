@@ -1,0 +1,67 @@
+/* RegisterScreen.css */
+.register-page-wrapper {
+    background: url('../images/loginn.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .custom-register-box {
+    background: rgba(255, 255, 255, 0.4); /* Прозрачность */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .custom-register-title {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .custom-form-group {
+    margin-bottom: 15px;
+  }
+  
+.custom-label {
+  font-size: 14px;
+  color: #333;
+  text-align: left; 
+  display: block;   
+  margin-bottom: 5px; 
+}
+  .custom-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .custom-register-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #b14040;
+    border: none;
+  }
+  
+  .custom-login-link {
+    margin-top: 15px;
+  }
+  
+  .custom-login-button-link {
+    text-decoration: none;
+  }
+  
+  .custom-login-button {
+    border-radius: 5px;
+  }
+  

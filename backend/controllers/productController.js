@@ -1,6 +1,7 @@
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
 
+// Өнімдерді категория бойынша фильтрациялау
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = 4
   const page = Number(req.query.pageNumber) || 1
@@ -14,8 +15,12 @@ const getProducts = asyncHandler(async (req, res) => {
       }
     : {}
 
-  const count = await Product.count({ ...keyword })
-  const products = await Product.find({ ...keyword })
+  const category = req.query.category
+    ? { category: req.query.category } // Категорияны фильтрациялау
+    : {}
+
+  const count = await Product.count({ ...keyword, ...category })
+  const products = await Product.find({ ...keyword, ...category })
     .limit(pageSize)
     .skip(pageSize * (page - 1))
 
@@ -29,7 +34,7 @@ const getProductById = asyncHandler(async (req, res) => {
     res.json(product)
   } else {
     res.status(404)
-    throw new Error(`Product not found`)
+    throw new Error('Product not found')
   }
 })
 
@@ -41,7 +46,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
     res.json({ message: 'Product removed' })
   } else {
     res.status(404)
-    throw new Error(`Product not found`)
+    throw new Error('Product not found')
   }
 })
 
@@ -123,6 +128,11 @@ const createProductReview = asyncHandler(async (req, res) => {
   }
 })
 
+const getCategories = asyncHandler(async (req, res) => {
+  const categories = await Product.distinct('category')
+  res.json(categories)
+})
+
 const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(3)
 
@@ -137,4 +147,5 @@ export {
   updateProduct,
   createProductReview,
   getTopProducts,
+  getCategories,
 }

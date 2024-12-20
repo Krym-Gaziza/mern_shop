@@ -12,22 +12,30 @@ const ProductCarousal = () => {
   ];
 
   return (
-    <Carousel pause="hover" className="bg-dark">
-      {images.map((image) => (
-        <Carousel.Item key={image.id}>
-          <div
-            style={{
-              backgroundImage: `url(${image.src})`,
-              backgroundSize: 'cover',   
-              backgroundPosition: 'center', 
-              backgroundRepeat: 'no-repeat',
-              height: '300px',           
-              width: '100%',             
-            }}
-          ></div>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <div
+      style={{
+        marginTop: '20px', 
+        padding: '10px',   
+      }}
+    >
+      <Carousel pause="hover" className="bg-dark" style={{ borderRadius: '10px' }}>
+        {images.map((image) => (
+          <Carousel.Item key={image.id}>
+            <div
+              style={{
+                backgroundImage: `url(${image.src})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                height: '400px', 
+                borderRadius: '10px', 
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)', 
+              }}
+            ></div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
   );
 };
 

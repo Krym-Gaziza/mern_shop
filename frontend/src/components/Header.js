@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-// import { LinkContainer } from 'react-router-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
@@ -16,22 +15,46 @@ const Header = () => {
     dispatch(logout())
   }
 
+  const activeLinkStyle = {
+    color: '#ff5733', 
+    fontWeight: 'bold', 
+  }
+
+  const linkStyle = {
+    color: '#ffffff',
+  }
+
+  const linkHoverStyle = {
+    color: '#ff5733', 
+  }
+
   return (
     <header>
-      <Navbar className="bg-dark-red" variant='dark' expand='lg' collapseOnSelect>
+      <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
         <Container>
           <Navbar.Brand as={Link} to='/'>
-            Narxoz shop
+            Narxoz Shop
           </Navbar.Brand>
           <SearchBox />
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse
-            className='justify-content-end'
-            id='basic-navbar-nav'>
+          <Navbar.Collapse className='justify-content-end' id='basic-navbar-nav'>
             <Nav>
-              <Nav.Link as={Link} to='/cart'>
+              <NavLink 
+                exact 
+                to='/cart' 
+                style={({ isActive }) => (isActive ? activeLinkStyle : linkStyle)} 
+                className='nav-link'
+              >
                 <i className='fas fa-shopping-cart'></i> Cart
-              </Nav.Link>
+              </NavLink>
+              <NavLink 
+                exact 
+                to='/about-us' 
+                style={({ isActive }) => (isActive ? activeLinkStyle : linkStyle)} 
+                className='nav-link'
+              >
+                About Us
+              </NavLink>
               {userInfo ? (
                 <NavDropdown title={userInfo.name} id='username'>
                   <NavDropdown.Item as={Link} to='/profile'>
@@ -42,9 +65,13 @@ const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Nav.Link as={Link} to='/login'>
+                <NavLink 
+                  to='/login' 
+                  style={({ isActive }) => (isActive ? activeLinkStyle : linkStyle)} 
+                  className='nav-link'
+                >
                   <i className='fas fa-user'></i> Sign In
-                </Nav.Link>
+                </NavLink>
               )}
               {userInfo && userInfo.isAdmin && (
                 <NavDropdown title='Admin' id='adminmenu'>

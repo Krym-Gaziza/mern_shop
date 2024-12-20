@@ -46,7 +46,7 @@ const ProfileScreen = () => {
   }, [navigate, userInfo, dispatch, user.email, user.name, success])
 
   const submitHandler = (e) => {
-    e.preventDefault() // Prevent the page from refreshing after submission
+    e.preventDefault() 
     if (password !== confirmPassword) {
       setMessage('Passwords do not match')
     } else {

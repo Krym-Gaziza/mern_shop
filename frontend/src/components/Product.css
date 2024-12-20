@@ -1,9 +1,14 @@
-
 .card-hover {
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card-hover:hover {
-    transform: scale(1.05);
-  }
-  
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative; 
+}
+
+.card-hover:hover {
+  transform: translateY(-10px); 
+  background-color: rgba(255, 99, 71, 0.1); 
+  box-shadow: 0 0 15px rgba(255, 99, 71, 0.6); 
+}
+
+.card-hover:active {
+  transform: translateY(0); 
+}

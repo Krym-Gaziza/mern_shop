@@ -1,0 +1,157 @@
+
+.about-us {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.8), rgba(137, 23, 23, 0.8));
+    position: relative;
+    padding: 0 0 50px;
+    overflow: hidden;
+}
+
+
+.narxoz-title {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 15px #f39c12, 0 0 30px #e74c3c;
+    animation: fadeInDown 1.5s ease-in-out;
+    margin-top: 50px;
+}
+
+
+.keyboard-animation {
+    text-align: center;
+    margin-top: 20px;
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; 
+  }
+  
+  .animated-text {
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100; 
+    white-space: nowrap; 
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    animation: typing 8s steps(80) 1s 1 normal both, blinkCaret 0.75s step-end infinite, colorChange 8s linear 1s forwards, fontWeightChange 8s linear 1s forwards;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blinkCaret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: white;
+    }
+    100% {
+      color: black;
+    }
+  }
+  
+  @keyframes fontWeightChange {
+    0% {
+      font-weight: 100;
+    }
+    100% {
+      font-weight: 700; 
+    }
+  }
+  
+
+.banner {
+    position: relative;
+    text-align: center;
+    margin: 50px 0;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    border-radius: 20px;
+    filter: brightness(0.7);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.image-box {
+    position: relative;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.image-box.left {
+    transform: translateX(-100%);
+}
+
+.image-box.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.text {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.image-box.visible .text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
